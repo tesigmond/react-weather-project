@@ -9,6 +9,7 @@ export default function App() {
         <a
           href="https://github.com/tesigmond/react-weather-project"
           target="_blank"
+          rel="noreferrer"
         >
           open-sourced
         </a>
