@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="Oslo" />
         <footer>
           This website is coded by Tory Sigmond and is{" "}
           <a
