@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import cloudy from "./cloudy.png";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.defaultCity);
-
-
 
   function handleResponse(response) {
     setWeatherData({
@@ -17,9 +16,8 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       city: response.data.name,
-      
+      date: new Date(response.data.dt * 1000),
     });
-     console.log(response.data);
   }
 
   if (weatherData.ready) {
@@ -46,7 +44,9 @@ export default function Weather(props) {
         </form>
         <h1>{city}</h1>
         <ul>
-          <li>Thursday 2:00pm</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
           <div className="row mt-3">
             <div className="col-6">
