@@ -2,6 +2,7 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import "./WeatherForecast.css";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
   function handleResponse(response) {
@@ -15,6 +16,7 @@ export default function WeatherForecast(props) {
 
   axios.get(apiUrl).then(handleResponse);
 
+<<<<<<< Updated upstream
   return (
     <div className="WeatherForecast">
       <div className="row">
@@ -24,6 +26,15 @@ export default function WeatherForecast(props) {
           <div className="WeatherForecast-temperatures">
             <span className="WeatherForecast-temperatures-max">44</span>
             <span className="WeatherForecast-temperatures-min">42</span>
+=======
+  if (loaded) {
+    return (
+      <div className="WeatherForecast">
+        <div className="row">
+          <div className="col">
+              <WeatherForecastDay data={forecast}/>
+          
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
